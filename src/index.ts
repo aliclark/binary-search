@@ -24,10 +24,7 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
     let bottom = 0
     let top = this.length
 
-    while (true) {
-        if (bottom === top) {
-            return none
-        }
+    while (bottom !== top) {
 
         const candidate = bottom + Math.floor((top - bottom) / 2)
 
@@ -52,6 +49,8 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
                 break
         }
     }
+
+    return none
 }
 
 export { Comparison, indexOf }
