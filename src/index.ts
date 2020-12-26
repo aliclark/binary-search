@@ -15,7 +15,7 @@ function defaultComparator<T>(first: T, second: T): Comparison {
     return Comparison.Equal
 }
 
-export default function indexOf<T>(item: T, comparator?: (first: T, second: T) => Comparison): Option<Number> {
+export default function indexOf<T>(item: T, comparator?: (first: T, second: T) => Comparison): Option<number> {
 
     if (!comparator) {
         comparator = defaultComparator
@@ -41,6 +41,7 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
                         return some(i)
                     }
                 }
+
                 return some(0)
 
             case Comparison.Greater:
@@ -52,4 +53,4 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
     return none
 }
 
-export { Comparison, indexOf }
+export { indexOf, Comparison }
