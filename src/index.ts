@@ -36,20 +36,12 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
 
             case Comparison.Equal:
 
-                for (let i = candidate; ; --i) {
-                    if (i === 0) {
+                for (let i = candidate; i > 0; --i) {
+                    if (comparator(item, this[i - 1]) !== Comparison.Equal) {
                         return some(i)
                     }
-    
-                    switch (comparator(item, this[i - 1])) {
-    
-                        case Comparison.Equal:
-                            break
-
-                        default:
-                            return some(i)
-                    }
                 }
+                return some(0)
 
             case Comparison.Greater:
                 bottom = candidate + 1
