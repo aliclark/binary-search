@@ -21,10 +21,10 @@ export default function indexOf<T>(item: T, comparator?: (first: T, second: T) =
         comparator = defaultComparator
     }
 
-    while (true) {
-        let bottom = 0
-        let top = this.length
+    let bottom = 0
+    let top = this.length
 
+    while (true) {
         if (bottom === top) {
             return none
         }
