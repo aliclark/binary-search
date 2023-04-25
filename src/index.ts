@@ -1,4 +1,4 @@
-export { indexOf, Comparison } from './indexOf'
+export { binarySearchLeftmost, Comparison } from './binarySearch';
 
-import { indexOf } from './indexOf'
-export default indexOf
+import { binarySearchLeftmost } from './binarySearch';
+export default binarySearchLeftmost;
